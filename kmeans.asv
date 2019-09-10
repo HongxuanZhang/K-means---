@@ -3,7 +3,5 @@ function kmeans(k,data);
 % data, 数据集
 % data = data';
 [sample_size,feature_size] = size(data);
-
-% 随机选取k个聚类中心
 First_id = randperm(sample_size,k);
 cluster_center = data(First_id,:);
