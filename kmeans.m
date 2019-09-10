@@ -37,8 +37,8 @@ while ~all(cluster_center_new == cluster_center)
 end
 
 for i2 = 1:k
-    fprintf('第%d个聚类中心为',i2);
-    cluster_center_new(i2,:)
+    fprintf('\n第%d个聚类中心为',i2);
+    disp(cluster_center_new(i2,:))
     fprintf('包含样本有\n');
     for j1 = 1:cluster_num(i2)-1
         fprintf('%d ',cluster_index(i2,j1));
