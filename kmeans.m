@@ -15,6 +15,6 @@ while all(cluster_center_new == cluster_center)
 %         if any(i == cluster_center)
 %             continue;
 %         end
-        
+        Euclidean_distance = pdist2(data(i),cluster_center,'euclidean'); %º∆À„≈∑ Ωæ‡¿Î
     end
 end
