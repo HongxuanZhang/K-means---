@@ -1,6 +1,6 @@
 function kmeans(k,data);
 % k,聚类中心个数
-% data, 数据集
+% data, 数据集,务必保证以一行为一个样本
 % data = data';
 [sample_size,feature_size] = size(data);
 
@@ -27,5 +27,6 @@ while all(cluster_center_new == cluster_center)
         cluster_num(I1) = cluster_num(I1)+1;
     end
     
-    % 现在已经得到了每个样本的模式类，
+    % 现在已经得到了每个样本的模式类，根据这些模式类，计算新的聚类中心
+    cluster_center_new = FindNewCenter(cluster_index,cluster_num,data);
 end
