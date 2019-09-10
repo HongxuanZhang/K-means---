@@ -1,6 +1,6 @@
 function kmeans(k,data);
 % k,聚类中心个数
-% data, 数据集
+% data, 数据集,务必保证以一行为一个样本
 % data = data';
 [sample_size,feature_size] = size(data);
 
