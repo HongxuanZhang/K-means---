@@ -1,0 +1,1 @@
+function [cluster_center_new] = FindNewCenter(cluster_index,cluster_num,data);
