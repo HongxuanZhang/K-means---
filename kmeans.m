@@ -14,7 +14,7 @@ first = 1;
 cluster_index = [];
 cluster_num = [];
 
-while ~all(cluster_center_new == cluster_center) 
+while ~all(all(cluster_center_new == cluster_center)) 
     if ~first
         cluster_center = cluster_center_new;
     else
@@ -36,12 +36,15 @@ while ~all(cluster_center_new == cluster_center)
     cluster_center_new = FindNewCenter(cluster_index,cluster_num,data);
 end
 
+
 for i2 = 1:k
     fprintf('\n第%d个聚类中心为',i2);
     disp(cluster_center_new(i2,:))
     fprintf('包含样本有\n');
-    for j1 = 1:cluster_num(i2)-1
-        fprintf('%d ',cluster_index(i2,j1));
+    if cluster_num(i2,1) ~= 1
+        for j1 = 1:cluster_num(i2,1)-1
+            fprintf('%d ',cluster_index(i2,j1));
+        end
     end
     fprintf('\n');
 end
